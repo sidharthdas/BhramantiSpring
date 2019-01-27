@@ -59,14 +59,18 @@ public class SignUpDaoImpl implements SignUpDao {
 		String emailCheck = checkEmail(userDetailsClient.getUserEmail());
 		if (emailCheck.equals("Not present")) {
 			String referenceId = referenceIdGenerator(userDetailsClient.getUserName());
-
+			System.out.println(userDetailsClient.getUserName());
+			System.out.println(userDetailsClient.getUserEmail());
+			System.out.println(userDetailsClient.getUserPassword());
 			UserDetails userDetail = new UserDetails();
 			userDetail.setUserName(userDetailsClient.getUserName());
 			userDetail.setUserEmail(userDetailsClient.getUserEmail());
 			userDetail.setUserReferenceId(referenceId);
 
 			UserSecurity userSecurity = new UserSecurity();
+			System.out.println(userDetailsClient.getUserPassword());
 			userSecurity.setPassword(userDetailsClient.getUserPassword());
+			
 			userSecurity.setUser(userDetail);
 
 			getSession().save(userDetail);
