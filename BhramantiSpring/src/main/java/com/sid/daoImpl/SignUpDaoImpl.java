@@ -17,13 +17,7 @@ import com.sid.model.UserSecurity;
 @Transactional
 public class SignUpDaoImpl implements SignUpDao {
 	
-	public void test(){
-		UserDetails us = new UserDetails();
-		us.setUserName("Test");
-		us.setUserEmail("Test");
-		us.setUserReferenceId("Test");
-		getSession().save(us);
-	}
+
 	
 
 	public String referenceIdGenerator(String name) {
@@ -55,7 +49,6 @@ public class SignUpDaoImpl implements SignUpDao {
 	@Override
 	public String add(UserDetailsClient userDetailsClient) {
 		// TODO Auto-generated method stub
-		test();
 		String emailCheck = checkEmail(userDetailsClient.getUserEmail());
 		if (emailCheck.equals("Not present")) {
 			String referenceId = referenceIdGenerator(userDetailsClient.getUserName());

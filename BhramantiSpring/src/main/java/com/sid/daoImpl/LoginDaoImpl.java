@@ -35,7 +35,9 @@ public class LoginDaoImpl implements LoginDao {
 			String pswdDB = passwordFromDB.substring(1, passwordFromDB.length()-1);
 			System.out.println("Passowrd from DB: "+pswdDB);
 			if(pswdDB.equals(loginCredential.getPassword())){
-				return "Login Sucessfull";
+				String numOfUsers = getSession().createSQLQuery("SELECT COUNT(*) FROM userdetails").list().toString();
+				
+				return "Login Sucessfull AND NUMBER OF USERS ARE "+numOfUsers;
 			}
 		}
 		return "InCorrect Password";
