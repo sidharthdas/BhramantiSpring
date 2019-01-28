@@ -68,7 +68,7 @@ public class SignUpDaoImpl implements SignUpDao {
 
 			getSession().save(userDetail);
 			getSession().save(userSecurity);
-
+			System.out.println();
 			return "Added";
 		}
 
