@@ -44,9 +44,9 @@ public class HolidayPackageServiceImpl implements HolidayPackageService {
 	}
 
 	@Override
-	public HolidayPackageModel updatePackage(String packageName) {
+	public HolidayPackageModel updatePackage(HolidayPackage holidayPackage) {
 		// TODO Auto-generated method stub
-		return null;
+		return holidayPackageDao.updatePackage(holidayPackage);
 	}
 
 }

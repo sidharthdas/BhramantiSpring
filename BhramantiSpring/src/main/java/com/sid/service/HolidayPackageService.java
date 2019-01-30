@@ -10,7 +10,7 @@ public interface HolidayPackageService {
 	public ArrayList<HolidayPackageModel> showAllPackages();
 	public HolidayPackageModel showPackageByName(String packageName);
 	public String addPackage(HolidayPackage holidayPackage);
-	public HolidayPackageModel updatePackage(String packageName);
+	public HolidayPackageModel updatePackage(HolidayPackage holidayPackage);
 	public String deletePackage(String packageName);
 
 }

@@ -46,5 +46,10 @@ public class HolidayPackageController {
 	public ResponseEntity<String> deletePackage(@RequestBody String packageName){
 		return new ResponseEntity<String>(holidayPackageService.deletePackage(packageName), HttpStatus.CREATED);
 	}
+	
+	@RequestMapping(value = "/updatePackage", method = RequestMethod.PUT)
+	public ResponseEntity<HolidayPackageModel> updatePackage(@RequestBody HolidayPackage holidayPackage){
+		return new ResponseEntity<HolidayPackageModel>(holidayPackageService.updatePackage(holidayPackage), HttpStatus.ACCEPTED);
+	}
 
 }
