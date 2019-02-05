@@ -1,9 +1,10 @@
 Manifest-Version: 1.0
+Built-By: Sidharth Das
+Build-Jdk: 9.0.4
 Implementation-Title: BhramantiSpring
 Implementation-Version: 0.0.1-SNAPSHOT
-Built-By: Sidharth Das
 Implementation-Vendor-Id: com.sid
-Build-Jdk: 1.8.0_131
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/BhramantiSpring
 Created-By: Maven Integration for Eclipse
-Implementation-Vendor: Pivotal Software, Inc.
 
