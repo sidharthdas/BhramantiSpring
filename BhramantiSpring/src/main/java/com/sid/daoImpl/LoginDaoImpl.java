@@ -34,9 +34,9 @@ public class LoginDaoImpl implements LoginDao {
 			//String passwordFromDB= getSession().createQuery("SELECT s.password from UserDetails d INNER JOIN UserSecurity s where d.userId = s.user_userId and d.userEmail = ?").setParameter(0,loginCredential.getUserEmail() ).list().toString();
 			String pswdDB = passwordFromDB.substring(1, passwordFromDB.length()-1);
 			System.out.println("Passowrd from DB: "+pswdDB);
+			System.out.println("Password from client is: "+loginCredential.getPassword());
 			if(pswdDB.equals(loginCredential.getPassword())){
 				String numOfUsers = getSession().createSQLQuery("SELECT COUNT(*) FROM userdetails").list().toString();
-				
 				return "Login Sucessfull AND NUMBER OF USERS ARE "+numOfUsers;
 			}
 		}

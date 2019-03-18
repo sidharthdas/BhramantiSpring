@@ -1,9 +1,13 @@
 package com.sid.model;
 
+import java.util.ArrayList;
+import java.util.Collection;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity(name = "UserDetails")
@@ -15,6 +19,18 @@ public class UserDetails {
 	private String userName;
 	private String userEmail;
 	private String userReferenceId;
+	@ManyToMany(mappedBy= "users")
+	private Collection<HolidayPackageModel> packages = new ArrayList<>();
+	
+	
+
+	public Collection<HolidayPackageModel> getPackages() {
+		return packages;
+	}
+
+	public void setPackages(Collection<HolidayPackageModel> packages) {
+		this.packages = packages;
+	}
 
 	public int getUserId() {
 		return userId;
